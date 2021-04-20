@@ -1,0 +1,12 @@
+[
+  {
+    "flightNumber": "BAPI-1235",
+    "origin": "Buenos Aires",
+    "destination": "Puerto Iguazú",
+    "seatType": "Economy",
+    "pricePerPerson": 6500,
+    "departureDate": "10/02/2021",
+    "returnDate": "15/02/2021",
+    "reserved": false
+  }
+]
