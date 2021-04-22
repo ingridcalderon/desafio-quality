@@ -18,8 +18,8 @@ public class FlightReservationRepositoryImpl implements FlightReservationReposit
 
     private final List<FlightDTO> database;
 
-    public FlightReservationRepositoryImpl(@Value("${path.hotels:dbVuelos.csv}") String path) throws ReservationException, ParseException {
-        this.database = CvsReader.loadFlightsDataBase(path);
+    public FlightReservationRepositoryImpl(@Value("${path.flights:dbVuelos.csv}") String path) throws ReservationException, ParseException {
+        this.database = (List<FlightDTO>) CvsReader.loadElements(path, FlightDTO.class);
     }
 
     @Override

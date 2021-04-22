@@ -2,13 +2,11 @@ package com.meli.desafioquality.repository;
 
 import com.meli.desafioquality.dto.HotelDTO;
 import com.meli.desafioquality.exception.InvalidQueryException;
-import com.meli.desafioquality.exception.ReservationException;
 import com.meli.desafioquality.utils.CvsReader;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Repository;
 
-import java.text.ParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -19,7 +17,7 @@ public class HotelReservationRepositoryImpl implements HotelReservationRepositor
     private final List<HotelDTO> database;
 
     public HotelReservationRepositoryImpl(@Value("${path.hotels:dbHoteles.csv}") String path)  {
-        this.database = CvsReader.loadDataBase(path);
+        this.database = (List<HotelDTO>) CvsReader.loadElements(path, HotelDTO.class);
     }
 
     @Override
